@@ -1,0 +1,120 @@
+/* Usamos la fuente Montserrat */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Contenedor del banner */
+.banner {
+    display: flex; /* Utilizamos flexbox para que los apartados y los iconos estén en fila */
+    width: 100%;
+    background-color: #333; /* Fondo oscuro para el banner */
+    color: white;
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 70px; /* Ajusta la altura del banner */
+    padding-left: 10px; /* Deja espacio a la izquierda para el icono */
+    justify-content: space-between; /* Separa los elementos con espacio entre ellos */
+}
+
+/* Icono de menú (hamburguesa) a la izquierda */
+.menu-icon {
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Contenedor de los apartados */
+.banner-items {
+    display: flex;
+    flex: 1; /* Hace que los apartados ocupen el máximo espacio disponible */
+    justify-content: space-around; /* Distribuye los apartados uniformemente */
+}
+
+/* Estilo para cada apartado dentro del banner */
+.banner-item {
+    text-align: center; /* Centra el texto en cada sección */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover al pasar el ratón sobre un apartado */
+.banner-item:hover {
+    background-color: #5ed7ff; /* Cambio de color al pasar el ratón */
+    color: white;
+}
+
+/* Contenedor de los iconos a la derecha */
+.icons-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los iconos (hamburguesa, usuario, corazón, carrito) */
+.menu-icon, .user-icon, .heart-icon, .cart-icon {
+    font-size: 20px; /* Tamaño de los iconos */
+    margin-left: 20px; /* Espaciado entre los iconos */
+    cursor: pointer;
+}
+
+/* Estilo para el menú lateral (oculto inicialmente) */
+.side-menu {
+    position: fixed;
+    left: -250px; /* Lo dejamos fuera de la pantalla */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.side-menu.open {
+    left: 0; /* Lo mueve hacia la izquierda cuando se abre */
+}
+
+/* Estilo para los elementos dentro del menú lateral */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    background-color: #5ed7ff;
+}
+
+/* Para pantallas pequeñas, reducimos un poco el tamaño del texto */
+@media (max-width: 768px) {
+    .banner-item {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .icons-container {
+        flex-direction: column; /* En pantallas pequeñas, los iconos se apilan */
+        margin-right: 0;
+    }
+
+    .menu-icon, .user-icon, .heart-icon, .cart-icon {
+        font-size: 18px; /* Reducimos el tamaño de los iconos en pantallas pequeñas */
+        margin-left: 0;
+        margin-bottom: 10px; /* Espacio entre los iconos cuando están apilados */
+    }
+}
