@@ -8,15 +8,42 @@ body {
 
 /* Contenedor del banner */
 .banner {
-    display: flex; /* Utilizamos flexbox para que los iconos estén en fila */
+    display: flex; /* Utilizamos flexbox para que los apartados y los iconos estén en fila */
     width: 100%;
     background-color: #333; /* Fondo oscuro para el banner */
     color: white;
     align-items: center; /* Centra los elementos verticalmente */
     height: 70px; /* Ajusta la altura del banner */
-    padding: 0 20px; /* Espaciado a los lados */
+    padding-left: 10px; /* Deja espacio a la izquierda para el icono */
     justify-content: space-between; /* Separa los elementos con espacio entre ellos */
-    box-sizing: border-box;
+}
+
+/* Icono de menú (hamburguesa) a la izquierda */
+.menu-icon {
+    font-size: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Contenedor de los apartados */
+.banner-items {
+    display: flex;
+    flex: 1; /* Hace que los apartados ocupen el máximo espacio disponible */
+    justify-content: space-around; /* Distribuye los apartados uniformemente */
+}
+
+/* Estilo para cada apartado dentro del banner */
+.banner-item {
+    text-align: center; /* Centra el texto en cada sección */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover al pasar el ratón sobre un apartado */
+.banner-item:hover {
+    background-color: #5ed7ff; /* Cambio de color al pasar el ratón */
+    color: white;
 }
 
 /* Contenedor de los iconos a la derecha */
@@ -70,16 +97,15 @@ body {
 }
 
 .side-menu ul li a:hover {
-    background-color: #ff5e5e;
+    background-color: #5ed7ff;
 }
 
 /* Nueva colección */
 .new-collection {
-    margin-top: 40px;
+    margin-top: 80px; /* Deja espacio para que el banner no tape las imágenes */
     text-align: center;
 }
 
-/* Título de la nueva colección */
 .new-collection h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -88,12 +114,13 @@ body {
 /* Contenedor de imágenes */
 .images-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para las imágenes */
+    gap: 20px; /* Espaciado entre las imágenes */
     padding: 0 20px;
+    margin-top: 20px; /* Espaciado adicional */
 }
 
-/* Estilo para cada imagen */
+/* Estilo de cada imagen */
 .image-item {
     position: relative;
     overflow: hidden;
@@ -102,24 +129,28 @@ body {
 .image-item img {
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionarla */
+    object-fit: cover; /* Asegura que las imágenes se vean bien */
     transition: transform 0.3s ease;
 }
 
-/* Efecto hover sobre las imágenes */
+/* Efecto hover en las imágenes */
 .image-item:hover img {
-    transform: scale(1.05); /* Hace que la imagen se amplíe ligeramente */
+    transform: scale(1.05); /* Amplía la imagen cuando se pasa el mouse */
 }
 
-/* Estilo para los enlaces */
-.image-item a {
-    text-decoration: none;
-    color: inherit;
-}
+/* Ajustes para pantallas pequeñas y móviles (menos de 720px) */
+@media (max-width: 720px) {
+    /* En pantallas pequeñas, mantenemos dos filas de tres imágenes */
+    .images-container {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    }
 
-/* Para pantallas pequeñas, reducimos un poco el tamaño del texto */
-@media (max-width: 768px) {
+    .image-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
     .banner-item {
         font-size: 14px;
         padding: 8px;
@@ -134,26 +165,5 @@ body {
         font-size: 18px; /* Reducimos el tamaño de los iconos en pantallas pequeñas */
         margin-left: 0;
         margin-bottom: 10px; /* Espacio entre los iconos cuando están apilados */
-    }
-
-    /* Ajuste para las imágenes en pantallas pequeñas */
-    .images-container {
-        grid-template-columns: 1fr; /* En pantallas pequeñas, las imágenes se apilan */
-    }
-
-    /* Ajuste del título para pantallas pequeñas */
-    .new-collection h2 {
-        font-size: 20px;
-    }
-}
-
-/* Ajuste responsivo para pantallas grandes */
-@media (min-width: 1024px) {
-    .images-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
-    }
-
-    .image-item img {
-        object-fit: cover; /* Mantiene el aspecto de las imágenes */
     }
 }
