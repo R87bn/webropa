@@ -64,12 +64,12 @@ body {
     position: fixed;
     left: -250px; /* Lo dejamos fuera de la pantalla */
     top: 0;
-    width: 250px;
-    height: 100%;
+    width: 200px;
+    height: 800%;
     background-color: #333;
     color: white;
     transition: left 0.3s ease;
-    padding-top: 60px;
+    padding-top: 100px;
     z-index: 999;
 }
 
@@ -80,7 +80,7 @@ body {
 /* Estilo para los elementos dentro del menú lateral */
 .side-menu ul {
     list-style: none;
-    padding: 0;
+    padding: 1;
 }
 
 .side-menu ul li {
@@ -108,28 +108,31 @@ body {
 
 .new-collection h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 /* Contenedor de imágenes */
 .images-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tres columnas para las imágenes */
-    gap: 20px; /* Espaciado entre las imágenes */
-    padding: 0 20px;
+    gap: 60px; /* Espaciado entre las imágenes */
+    padding: 0 80px;
     margin-top: 20px; /* Espaciado adicional */
 }
 
 /* Estilo de cada imagen */
 .image-item {
-    position: relative;
+    position:relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .image-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Asegura que las imágenes se vean bien */
+    width: 80%;
+    aspect-ratio: 1 / 0; /* Proporción cuadrada. Estaba en 1/1, al cambiarlo se ven las caras!! */
+    object-fit: cover; /* Recorta la imagen si es necesario */
     transition: transform 0.3s ease;
 }
 
@@ -138,17 +141,11 @@ body {
     transform: scale(1.05); /* Amplía la imagen cuando se pasa el mouse */
 }
 
-/* Ajustes para pantallas pequeñas y móviles (menos de 720px) */
+/* Ajustes para pantallas pequeñas y móviles */
 @media (max-width: 720px) {
-    /* En pantallas pequeñas, mantenemos dos filas de tres imágenes */
+    /* Mantén la estructura de tres columnas en móviles */
     .images-container {
-        grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    }
-
-    .image-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .banner-item {
@@ -162,8 +159,54 @@ body {
     }
 
     .menu-icon, .user-icon, .heart-icon, .cart-icon {
-        font-size: 18px; /* Reducimos el tamaño de los iconos en pantallas pequeñas */
+        font-size: 18px;
         margin-left: 0;
-        margin-bottom: 10px; /* Espacio entre los iconos cuando están apilados */
+        margin-bottom: 10px;
+    }
+
+    .item-info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 4px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        box-sizing: border-box;
     }
 }
+/* Estilos para el banner final */
+.footer-banner {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 3ch;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+    font-size: 16px;
+}
+
+/* Estilo para los iconos en el banner final */
+.footer-item i {
+    font-size: 20px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 720px) {
+    .footer-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-item {
+        margin-bottom: 10px;
+    }
+}
+
