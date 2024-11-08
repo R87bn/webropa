@@ -1,0 +1,23 @@
+<div class="new-collection">
+        <h2>Nueva Colección</h2>
+        <div class="images-container">
+            <div class="image-item">
+                <a href="foto1"><img src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-1.jpg" alt="Foto 1"></a>
+            </div>
+            <div class="image-item">
+                <a href="foto2"><img src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-2.jpg" alt="Foto 2"></a>
+            </div>
+            <div class="image-item">
+                <a href="foto3"><img  src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-6.jpg"></a>
+            </div>
+            <div class="image-item">
+                <a href="foto4"><img src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-3.jpg" alt="Foto 4"></a>
+            </div>
+            <div class="image-item">
+                <a href="foto5"><img src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-4.jpg"></a>
+            </div>
+            <div class="image-item">
+                <a href="foto6"><img src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/online-shop/images/image-3.jpg"></a>
+            </div>
+        </div>
+    </div>
